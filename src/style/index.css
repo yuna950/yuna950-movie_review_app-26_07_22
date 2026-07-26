@@ -34,6 +34,11 @@ svg {
   max-width: 100%;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 /* 버튼 기본 */
 button {
   cursor: pointer;

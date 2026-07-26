@@ -13,6 +13,7 @@ export default function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path={`/detail/:id`} element={<Mypage />} />
       </Routes>
       <Footer />
     </HashRouter>

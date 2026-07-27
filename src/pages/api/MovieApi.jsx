@@ -23,3 +23,9 @@ export const getTrending = () => fetchMovie("trending/movie/week");
 export const getNowPlaying = () => fetchMovie("movie/now_playing");
 export const getPopular = () => fetchMovie("movie/popular");
 export const getUpComing = () => fetchMovie("movie/upcoming");
+
+// 영화 상세정보
+export const getDetail = (movie_id) => fetchMovie(`movie/${movie_id}`);
+
+// 예고편
+export const getVideo = (movie_id) => fetchMovie(`movie/${movie_id}/videos`);

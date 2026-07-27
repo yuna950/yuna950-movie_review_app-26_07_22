@@ -12,21 +12,21 @@ import Section_2 from "./components/Section_2";
 export default function Home() {
   const [trendData, setTrendData] = useState();
   const [movieData, setMovieData] = useState();
+  const [videoData, setVideoData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       try {
-        const result = await getTrending();
-
-        setTrendData(result.results[0]);
+        const trending = await getTrending();
+        setTrendData(trending.results[0]);
+        // 화제작
 
         const [popular, nowPlaying, upComing] = await Promise.all([
           getPopular(),
           getNowPlaying(),
           getUpComing(),
         ]);
-
         setMovieData({ popular, nowPlaying, upComing });
         // 영화 리스트
       } catch (error) {
@@ -34,7 +34,6 @@ export default function Home() {
       } finally {
         setLoading(false);
       }
-      // 화제작
     })();
   }, []);
 

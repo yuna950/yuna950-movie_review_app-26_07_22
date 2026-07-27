@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Search from "./pages/search/Search";
 import Mypage from "./pages/mypage/Mypage";
+import Detail from "./pages/datail/Detail";
 
 export default function Router() {
   return (
@@ -13,7 +14,7 @@ export default function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/mypage" element={<Mypage />} />
-        <Route path={`/detail/:id`} element={<Mypage />} />
+        <Route path={`/detail/:id`} element={<Detail />} />
       </Routes>
       <Footer />
     </HashRouter>

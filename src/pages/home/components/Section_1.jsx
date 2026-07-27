@@ -22,7 +22,7 @@ export default function Section_1({ data }) {
           {data.overview.slice(0, 100) + "..."}
         </p>
         <div className="text-white/50 border-b border-white/50 w-[80px] pb-2 hover:text-white hover:border-white transition cursor-pointer">
-          <Link to={`/movie/${data.id}`}>자세히 보기</Link>
+          <Link to={`/detail/${data.id}`}>자세히 보기</Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ import Section_2 from "./components/Section_2";
 export default function Home() {
   const [trendData, setTrendData] = useState();
   const [movieData, setMovieData] = useState();
-  const [videoData, setVideoData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -49,7 +48,7 @@ export default function Home() {
   const getNowPlayingData = movieData?.nowPlaying;
   const getUpComingData = movieData?.upComing;
 
-  console.log(getPopularData);
+  // console.log(getPopularData);
 
   return (
     <div>

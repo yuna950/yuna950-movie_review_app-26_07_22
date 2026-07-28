@@ -13,7 +13,7 @@ export default function Section_2({ title, data }) {
       {/* con_wrap */}
       <Swiper spaceBetween={10} slidesPerView={5}>
         {/* con */}
-        {data.results.map((movie) => (
+        {data?.results?.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Link to={`/detail/${movie.id}`}>
               <div className="h-[400px] rounded-lg overflow-hidden ">

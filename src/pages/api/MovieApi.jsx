@@ -27,5 +27,24 @@ export const getUpComing = () => fetchMovie("movie/upcoming");
 // 영화 상세정보
 export const getDetail = (movie_id) => fetchMovie(`movie/${movie_id}`);
 
+// 감독, 배우
+export const getCredit = (movie_id) => fetchMovie(`movie/${movie_id}/credits`);
+
 // 예고편
 export const getVideo = (movie_id) => fetchMovie(`movie/${movie_id}/videos`);
+
+// ott
+export const getProvider = (movie_id) =>
+  fetchMovie(`movie/${movie_id}/watch/providers`);
+
+// 유사한 영화
+export const getSimilar = (movie_id) => fetchMovie(`movie/${movie_id}/similar`);
+
+// 스틸컷
+export const getImage = (movie_id) => {
+  const url = new URL(baseUrl + `movie/${movie_id}/images`);
+
+  url.searchParams.set("language", "null");
+
+  return fetch(url, options).then((res) => res.json());
+};

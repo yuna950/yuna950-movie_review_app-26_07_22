@@ -48,3 +48,10 @@ export const getImage = (movie_id) => {
 
   return fetch(url, options).then((res) => res.json());
 };
+
+// 검색
+export const getSearch = (keyword) =>
+  fetchMovie(`search/movie?query=${keyword}`);
+
+// 장르
+export const getGenre = () => fetchMovie(`genre/movie/list`);

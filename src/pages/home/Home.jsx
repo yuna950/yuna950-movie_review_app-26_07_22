@@ -53,9 +53,11 @@ export default function Home() {
   return (
     <div>
       <Section_1 data={trendData} />
-      <Section_2 data={getPopularData} title={"인기 영화🔥"} />
-      <Section_2 data={getNowPlayingData} title={"현재 상영작🍿"} />
-      <Section_2 data={getUpComingData} title={"개봉 예정작🎬"} />
+      <div className="px-[30px] lg:px-[50px] xl:px-[200px] py-[50px] xl:py-[100px] space-y-[100px]">
+        <Section_2 data={getPopularData} title={"인기 영화🔥"} />
+        <Section_2 data={getNowPlayingData} title={"현재 상영작🍿"} />
+        <Section_2 data={getUpComingData} title={"개봉 예정작🎬"} />
+      </div>
     </div>
   );
 }

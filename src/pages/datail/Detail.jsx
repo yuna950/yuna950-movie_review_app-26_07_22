@@ -17,6 +17,7 @@ import Section_4 from "./components/Section_4";
 import Section_5 from "./components/Section_5";
 import Similar from "./components/Similar";
 import { useScrollTop } from "../../lib/useScrollTop";
+import PageTitle from "../../components/PageTitle";
 
 export default function Detail() {
   const { id } = useParams();
@@ -79,6 +80,7 @@ export default function Detail() {
 
   return (
     <div>
+      <PageTitle title={movieData.title} />
       <Section_1 movieData={movieData} />
       {/* hero_section */}
       <div className="px-[30px] lg:px-[50px] xl:px-[200px] py-[50px] xl:py-[100px] space-y-[100px] xl:space-y-[150px]">

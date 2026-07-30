@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Search from "./pages/search/Search";
 import Mypage from "./pages/mypage/Mypage";
 import Detail from "./pages/datail/Detail";
+import Signup from "./pages/user/Signup";
+import Login from "./pages/user/Login";
 
 export default function Router() {
   return (
@@ -15,6 +17,8 @@ export default function Router() {
         <Route path="/search" element={<Search />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path={`/detail/:id`} element={<Detail />} />
+        <Route path="/sign_up" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </HashRouter>

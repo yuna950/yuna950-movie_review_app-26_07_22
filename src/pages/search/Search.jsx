@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { getGenre, getSearch } from "../api/MovieApi";
+import { getDiscover, getGenre, getSearch } from "../api/MovieApi";
 import { useEffect, useState } from "react";
 import { NO_IMG, W500_URL } from "../../constant/imgBaseUrl";
 
 export default function Search() {
   const [keyword, setKeyword] = useState("");
   const [genreData, setgenreData] = useState();
+  const [selecteGenre, setSelecteGenre] = useState("");
   const [data, setData] = useState();
 
   const onSubmit = async (e) => {
@@ -13,8 +14,20 @@ export default function Search() {
 
     if (!keyword.trim()) return;
 
+    setSelecteGenre("");
+
     const searchData = await getSearch(keyword);
     setData(searchData.results);
+  };
+
+  const onClickGenre = async (genreId) => {
+    setSelecteGenre(genreId);
+
+    setKeyword("");
+
+    const result = await getDiscover(genreId);
+
+    setData(result.results);
   };
 
   useEffect(() => {
@@ -39,11 +52,17 @@ export default function Search() {
         />
       </form>
 
-      <div className="flex justify-evenly mt-4">
+      <div className="flex mt-4 flex-wrap gap-3 xl:gap-4">
         {genreData?.map((genre) => (
           <div
             key={genre.id}
-            className="px-3 py-2 border rounded-4xl border-gray-400 text-gray-400 hover:border-black hover:text-black cursor-pointer"
+            onClick={() => onClickGenre(genre.id)}
+            className={`px-3 py-2 border rounded-4xl  hover:border-black hover:text-black cursor-pointer 
+              ${
+                selecteGenre === genre.id
+                  ? "bg-black text-white"
+                  : "border-gray-400 text-gray-400"
+              }`}
           >
             {genre.name}
           </div>
@@ -54,7 +73,7 @@ export default function Search() {
         <div className="mt-[30px] mb-[30px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-6">
           {data.map((movie) => (
             <Link key={movie.id} to={`/detail/${movie.id}`} className="group">
-              <div className=" overflow-hidden rounded-lg h-[280px] md:h-[300px] xl:h-[400px]">
+              <div className=" overflow-hidden rounded-lg h-[320px] md:h-[350px] xl:h-[400px]">
                 <img
                   className="object-cover h-full"
                   src={

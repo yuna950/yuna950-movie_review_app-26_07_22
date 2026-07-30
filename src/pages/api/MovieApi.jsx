@@ -55,3 +55,7 @@ export const getSearch = (keyword) =>
 
 // 장르
 export const getGenre = () => fetchMovie(`genre/movie/list`);
+
+// 태그별 검색
+export const getDiscover = (genreId) =>
+  fetchMovie(`discover/movie?with_genres=${genreId}&sort_by=popularity.desc`);

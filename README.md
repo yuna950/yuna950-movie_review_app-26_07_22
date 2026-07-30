@@ -1,16 +1,20 @@
-# React + Vite
+# Movie Review App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TMDB API를 활용한 영화 리뷰 웹 애플리케이션 입니다.
 
-Currently, two official plugins are available:
+현재 인기 영화, 상영 중인 영화, 개봉 예정작 등을 활인할 수 있으며, 검색, 장르별 탐색, 상세 정보, 리뷰 작성, 북마크 기능을 이용할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Front-end
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### API
+
+- TMDB (The Movie DataBase) API

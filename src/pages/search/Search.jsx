@@ -19,6 +19,7 @@ export default function Search() {
     const searchData = await getSearch(keyword);
     setData(searchData.results);
   };
+  // 검색 이벤트
 
   const onClickGenre = async (genreId) => {
     setSelecteGenre(genreId);
@@ -29,6 +30,7 @@ export default function Search() {
 
     setData(result.results);
   };
+  // 장르 선택 이벤트
 
   useEffect(() => {
     (async () => {
@@ -36,10 +38,9 @@ export default function Search() {
       setgenreData(genre?.genres);
     })();
   }, []);
+  // 장르 불러오기
 
-  console.log(genreData);
-
-  // console.log(searchData);
+  // console.log(genreData);
 
   return (
     <div className="px-[30px] lg:px-[50px] xl:px-[200px] py-[100px]">

@@ -2,6 +2,7 @@ import { CiBookmark } from "react-icons/ci";
 import { W500_URL } from "../../../constant/imgBaseUrl";
 import { FaBookmark, FaRegBookmark, FaStar } from "react-icons/fa";
 import { useState } from "react";
+import Rating from "./Rating";
 
 export default function Section_2({ movieData, providerKr }) {
   const providers = [
@@ -28,19 +29,10 @@ export default function Section_2({ movieData, providerKr }) {
         {/* img_wrap */}
 
         <div className="w-full md:w-[80%]">
-          <div className="w-full flex justify-between px-13 py-4 border rounded-2xl border-gray-200 mb-10">
-            <div className="flex">
-              <FaStar size={"2.5em"} color="lightgray" />
-              <FaStar size={"2.5em"} color="lightgray" />
-              <FaStar size={"2.5em"} color="lightgray" />
-              <FaStar size={"2.5em"} color="lightgray" />
-              <FaStar size={"2.5em"} color="lightgray" />
-              {/* <FaStarHalfAlt size={"2.5em"} /> */}
-            </div>
-            {/* star */}
-
+          <div className="w-full flex justify-between px-5 xl:px-13 py-4 border rounded-2xl border-gray-200 mb-10">
+            <Rating />
             <Icon
-              size="2.5em"
+              size="2em"
               color={bookmarked || hover ? "gold" : "lightgray"}
               className="cursor-pointer transition"
               onMouseEnter={() => setHover(true)}

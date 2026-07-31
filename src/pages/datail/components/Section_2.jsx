@@ -12,9 +12,8 @@ export default function Section_2({ movieData, providerKr }) {
   ];
 
   const [bookmarked, setBookmarked] = useState(false);
-  const [hover, setHover] = useState(false);
 
-  const Icon = bookmarked || hover ? FaBookmark : FaRegBookmark;
+  const Icon = bookmarked ? FaBookmark : FaRegBookmark;
 
   return (
     <div className="">
@@ -33,10 +32,8 @@ export default function Section_2({ movieData, providerKr }) {
             <Rating />
             <Icon
               size="2em"
-              color={bookmarked || hover ? "gold" : "lightgray"}
-              className="cursor-pointer transition"
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
+              color={bookmarked ? "gold" : "lightgray"}
+              className="cursor-pointer transition "
               onClick={() => setBookmarked(!bookmarked)}
             />
           </div>

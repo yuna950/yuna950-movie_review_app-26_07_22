@@ -4,16 +4,6 @@ import { FaStar } from "react-icons/fa";
 export default function Rating() {
   const [rating, setRating] = useState(0);
 
-  const handleClick = (e, star) => {
-    const { left, width } = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - left;
-
-    if (clickX < width / 2) {
-      setRating(star - 0.5);
-    } else {
-      setRating(star);
-    }
-  };
   return (
     <div className="flex items-center gap-3">
       <div className="flex">

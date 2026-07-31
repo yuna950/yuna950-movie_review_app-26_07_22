@@ -16,6 +16,17 @@ export default function Section_5({ data }) {
           clickable: true,
         }}
         modules={[Pagination]}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1.5,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {data.results.map((video) => (
           <SwiperSlide key={video.id}>

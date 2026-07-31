@@ -7,6 +7,7 @@ import {
   getUpComing,
 } from "../api/MovieApi";
 import Loading from "../../components/Loading";
+import Section_3 from "./components/Section_3";
 import Section_2 from "./components/Section_2";
 
 export default function Home() {
@@ -48,15 +49,15 @@ export default function Home() {
   const getNowPlayingData = movieData?.nowPlaying;
   const getUpComingData = movieData?.upComing;
 
-  // console.log(getPopularData);
+  // console.log(getUpComingData);
 
   return (
     <div>
       <Section_1 data={trendData} />
       <div className="px-[30px] lg:px-[50px] xl:px-[200px] py-[50px] xl:py-[100px] space-y-[100px]">
         <Section_2 data={getPopularData} title={"인기 영화🔥"} />
-        <Section_2 data={getNowPlayingData} title={"현재 상영작🍿"} />
-        <Section_2 data={getUpComingData} title={"개봉 예정작🎬"} />
+        <Section_3 data={getNowPlayingData} title={"현재 상영작🍿"} />
+        <Section_3 data={getUpComingData} title={"개봉 예정작🎬"} />
       </div>
     </div>
   );

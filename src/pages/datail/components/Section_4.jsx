@@ -17,6 +17,17 @@ export default function Section_4({ data }) {
         }}
         modules={[Pagination]}
         loop={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1.5,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {data.backdrops.slice(0, 10).map((backdrop) => (
           <SwiperSlide key={backdrop.file_path}>

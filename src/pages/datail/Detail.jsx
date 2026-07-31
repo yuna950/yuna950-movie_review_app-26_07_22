@@ -5,7 +5,7 @@ import {
   getDetail,
   getImage,
   getProvider,
-  getSimilar,
+  getRecommend,
   getVideo,
 } from "../api/MovieApi";
 import Loading from "../../components/Loading";
@@ -25,7 +25,8 @@ export default function Detail() {
   const [videoData, setVideoData] = useState();
   const [creditData, setCreditData] = useState();
   const [providerData, setProviderData] = useState();
-  const [similarData, setSimilarData] = useState();
+
+  const [recommendData, setRecommendData] = useState();
   const [imageData, setImageData] = useState();
   const [loading, setLoading] = useState(true);
   useScrollTop();
@@ -49,8 +50,8 @@ export default function Detail() {
         setProviderData(providerData);
         // OTT
 
-        const similarData = await getSimilar(id);
-        setSimilarData(similarData);
+        const recommendData = await getRecommend(id);
+        setRecommendData(recommendData);
         // 유사 영화
 
         const imageData = await getImage(id);
@@ -76,7 +77,7 @@ export default function Detail() {
   const crewData = creditData?.crew.find((crew) => crew.job === "Director");
   const providerKr = providerData?.results.KR;
 
-  console.log(creditData);
+  // console.log(creditData);
 
   return (
     <div>
@@ -92,7 +93,7 @@ export default function Detail() {
         {/* 스틸컷 */}
         <Section_5 data={videoData} />
         {/* 예고편 */}
-        <Similar similarData={similarData} />
+        <Similar similarData={recommendData} />
         {/* 유사영화 */}
       </div>
     </div>

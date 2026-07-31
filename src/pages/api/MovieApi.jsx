@@ -38,7 +38,8 @@ export const getProvider = (movie_id) =>
   fetchMovie(`movie/${movie_id}/watch/providers`);
 
 // 유사한 영화
-export const getSimilar = (movie_id) => fetchMovie(`movie/${movie_id}/similar`);
+export const getRecommend = (movie_id) =>
+  fetchMovie(`movie/${movie_id}/recommendations`);
 
 // 스틸컷
 export const getImage = (movie_id) => {

@@ -57,7 +57,7 @@ export default function Search() {
           <div
             key={genre.id}
             onClick={() => onClickGenre(genre.id)}
-            className={`px-3 py-2 border rounded-4xl  hover:border-black hover:text-black cursor-pointer 
+            className={`px-3 py-2 border rounded-4xl  hover:bg-black hover:text-white cursor-pointer 
               ${
                 selecteGenre === genre.id
                   ? "bg-black text-white"

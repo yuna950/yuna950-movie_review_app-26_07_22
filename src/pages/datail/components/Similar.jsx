@@ -1,25 +1,20 @@
 import { Link } from "react-router-dom";
 import { W500_URL } from "../../../constant/imgBaseUrl";
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 
 export default function Similar({ similarData }) {
+  const swiperRef = useRef(null);
   return (
     <div>
       <div className="">
         <h2 className="font-bold text-2xl mb-5">유사한 영화🎞</h2>
 
-        <div className="flex">
+        <div className="relative">
           <Swiper
-            style={{
-              "--swiper-navigation-color": "#fff",
-              "--swiper-pagination-color": "#fff",
-            }}
             className="w-[100%]"
-            navigation={true}
-            modules={[Navigation]}
             centeredSlides={false}
             spaceBetween={10}
             slidesPerView={6}
@@ -42,6 +37,9 @@ export default function Similar({ similarData }) {
                 slidesPerGroup: 6,
               },
             }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           >
             {similarData?.results.map((similar) => (
               <SwiperSlide key={similar.id}>
@@ -59,6 +57,20 @@ export default function Similar({ similarData }) {
               </SwiperSlide>
             ))}
           </Swiper>
+          <button
+            className="px-1 py-1 rounded-full bg-white/80 absolute top-[50%] left-0 transform translate-x-[-50%] translate-y-[-50%] z-2 shadow-md
+            shadow-black/20"
+            onClick={() => swiperRef.current.slidePrev()}
+          >
+            <ChevronLeft size={30} />
+          </button>
+          <button
+            className="px-1 py-1 rounded-full bg-white/80 absolute top-[50%] right-0 transform translate-x-[50%] translate-y-[-50%] z-2 shadow-md
+            shadow-black/20"
+            onClick={() => swiperRef.current.slideNext()}
+          >
+            <ChevronRight size={30} />
+          </button>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import { W500_URL } from "../../../constant/imgBaseUrl";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -58,7 +58,9 @@ export default function Section_2({ title, data }) {
                     {index + 1}
                   </p>
                 </div>
-                <p className="font-bold text-[20px] mt-2">{movie.title}</p>
+                <p className="font-bold text-[18px] lg:text-[20px] mt-2">
+                  {movie.title}
+                </p>
               </Link>
             </SwiperSlide>
           ))}

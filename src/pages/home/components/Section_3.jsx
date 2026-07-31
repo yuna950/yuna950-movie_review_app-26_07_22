@@ -40,7 +40,9 @@ export default function Section_3({ title, data }) {
                   alt={movie.title}
                 />
               </div>
-              <p className="font-bold text-[20px] mt-2">{movie.title}</p>
+              <p className="font-bold text-[18px] lg:text-[20px] mt-2">
+                {movie.title}
+              </p>
             </Link>
           </SwiperSlide>
         ))}

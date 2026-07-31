@@ -16,8 +16,10 @@ export default function Section_1({ data }) {
       </h2>
 
       <div className="text-white absolute left-[30px] lg:left-[50px] xl:left-[200px] bottom-[50px] xl:bottom-[100px]">
-        <h2 className=" font-bold text-4xl xl:text-6xl mb-4 ">{data.title}</h2>
-        <p className="text-white/70 w-[70%] mb-6 xl:mb-5">
+        <h2 className=" font-bold text-2xl lg:text-4xl xl:text-6xl mb-4 ">
+          {data.title}
+        </h2>
+        <p className="text-white/70 w-[70%] text-sm lg:text-md mb-6 xl:mb-5">
           {data.overview.slice(0, 100) + "..."}
         </p>
         <div className="text-white/70 border-b border-b-2 border-white/50 w-[80px] pb-2 hover:text-white hover:border-white transition cursor-pointer">

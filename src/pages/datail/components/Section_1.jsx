@@ -14,10 +14,10 @@ export default function Section_1({ movieData }) {
         }}
       >
         <div className="absolute left-[30px] lg:left-[50px] xl:left-[200px] bottom-[100px]">
-          <p className="text-white font-bold text-5xl mb-3">
+          <p className="text-white font-bold text-2xl lg:text-4xl xl:text-5xl mb-3">
             {movieData.title}
           </p>
-          <div className="text-white/90 space-y-3">
+          <div className="text-white/90 space-y-3 text-sm lg:text-md">
             <p>{movieData.original_title}</p>
 
             <ul className="flex space-x-3">

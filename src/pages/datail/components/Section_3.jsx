@@ -20,7 +20,7 @@ export default function Section_3({ crewData, castData }) {
           className="w-full"
           breakpoints={{
             320: {
-              slidesPerView: 3.5,
+              slidesPerView: 2.5,
               spaceBetween: 30,
             },
             768: {
